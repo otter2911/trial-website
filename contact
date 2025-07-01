@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Contact</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,8 +16,16 @@
   </nav>
 
   <main class="content">
-    <h1>Welcome to My Website!</h1>
-    <p>This is the home page of your new multi-page website.</p>
+    <h1>Contact Me</h1>
+    <form action="https://formspree.io/f/mldnzzvp" method="POST">
+      <label for="email">Your Email:</label>
+      <input id="email" type="email" name="email" required />
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
   </main>
 </body>
 </html>
