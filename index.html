@@ -5,53 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome Page</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
       background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding-top: 60px;
     }
+
     h1 {
       color: #333;
+      margin-bottom: 30px;
     }
-    button {
+
+    .btn-primary {
       padding: 10px 20px;
       font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 40px;
     }
-    button:hover {
+
+    .btn-primary:hover {
       background-color: #0056b3;
     }
 
     form {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
     }
 
     form label {
-      margin-bottom: 15px;
-      display: flex;
-      flex-direction: column;
+      display: block;
       text-align: left;
-      width: 300px;
+      margin-bottom: 15px;
+      font-weight: bold;
     }
 
-    form input, form textarea {
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
       font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
     }
 
     form button[type="submit"] {
+      width: 100%;
+      padding: 10px;
       background-color: #28a745;
       color: white;
-      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     form button[type="submit"]:hover {
@@ -60,17 +93,19 @@
   </style>
 </head>
 <body>
+
   <h1>Welcome to My Website!</h1>
-  <button onclick="alert('Button clicked!')">Click Me</button>
+  <button class="btn-primary" onclick="alert('Button clicked!')">Click Me</button>
 
   <form action="https://formspree.io/f/mldnzzvp" method="POST">
-    <label for="email">Your email:
-      <input id="email" type="email" name="email" required>
-    </label>
-    <label for="message">Your message:
-      <textarea id="message" name="message" required></textarea>
-    </label>
-    <button type="submit">Send</button>
+    <label for="email">Your Email:</label>
+    <input id="email" type="email" name="email" required />
+
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send Message</button>
   </form>
+
 </body>
 </html>
