@@ -17,8 +17,6 @@
     button {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #007bff;
-      color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -26,27 +24,53 @@
     button:hover {
       background-color: #0056b3;
     }
+
+    form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form label {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 300px;
+    }
+
+    form input, form textarea {
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    form button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      margin-top: 10px;
+    }
+
+    form button[type="submit"]:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
   <h1>Welcome to My Website!</h1>
   <button onclick="alert('Button clicked!')">Click Me</button>
 
-  <form
-  action="https://formspree.io/f/mldnzzvp"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-
+  <form action="https://formspree.io/f/mldnzzvp" method="POST">
+    <label for="email">Your email:
+      <input id="email" type="email" name="email" required>
+    </label>
+    <label for="message">Your message:
+      <textarea id="message" name="message" required></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
 </body>
 </html>
